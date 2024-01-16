@@ -101,4 +101,10 @@ int main() {
   void* targetExecutableAddress = reinterpret_cast<void*>(0x1000);
 
   // Example: Replace oldBytes with newBytes dynamically
-  const char oldBytes[] = "\x33\x30\x38\x32\x30\x31\x42
+  const char oldBytes[] = "\x33\x30\x38\x32\x30\x31\x42\x37";
+  const char newBytes[] = "\x33\x30\x38\x32\x30\x31\x42\x37\x41\x42\x43\x44"; // <-- Here it is
+
+  searchAndReplaceDynamic(targetExecutableAddress, sizeof(oldBytes) - 1, oldBytes, newBytes);
+
+  return 0;
+}
